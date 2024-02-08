@@ -5,8 +5,10 @@ test.beforeEach('Launch the website', async ({ page }) => {
   await page.goto('https://www.saucedemo.com/');
 });
 
-test('has title', async ({ page }) => {
+test('has title', async ({ page,apiHelpers }) => {
   await expect(page).toHaveTitle(/Swag Labs/);
+  //below line will fail as API details needs to be provided
+  //await apiHelpers.retireveDataFromApi();
 });
 
 test('Add and remove item from cart', async ({ page, homePage }) => {
